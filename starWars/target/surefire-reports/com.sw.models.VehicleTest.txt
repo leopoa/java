@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sw.models.VehicleTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec - in com.sw.models.VehicleTest

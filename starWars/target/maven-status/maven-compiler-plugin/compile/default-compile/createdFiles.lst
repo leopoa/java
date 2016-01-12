@@ -1,0 +1,10 @@
+com\sw\models\RootApi.class
+com\sw\dao\ApiDAO.class
+com\sw\models\PeopleApi.class
+com\sw\service\VehicleService.class
+com\sw\StarWarsApiRest.class
+com\sw\models\Rescue.class
+com\sw\models\Vehicle.class
+com\sw\service\RescueService.class
+com\sw\Application.class
+com\sw\service\ApiService.class
