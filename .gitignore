@@ -1,6 +1,6 @@
 *.class
-starWars/.classpath
+*.classpath
 *.project
-starWars/.settings/org.eclipse.core.resources.prefs
+*.settings
 *.prefs
 starWars/target/star-wars-0.0.1-SNAPSHOT.jar
