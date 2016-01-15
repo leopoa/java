@@ -8,7 +8,7 @@ Boa sorte recruta!" - Luke Skywalker
 <b>O planeta Tatooine está sendo atacado e sua missão é evacuar todos dessa lista, o mais rápido possível.</b>
 
 ## Objetivos:
-Você vai receber uma lista de identificação de pessoas e precia agrupar elas.
+Você vai receber uma lista de identificação de pessoas e precisa agrupar elas.
 - Separe os grupos por espécies para preparar a fuga deles;
 - Podem haver números repetidos, nesses casos serão considerados clones, irmãos ou da famíia;
 - Exemplo de input entrada: 1,42,5,5,1,45,33,50,55,66,67,68,80
