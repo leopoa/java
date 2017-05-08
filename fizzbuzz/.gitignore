@@ -1,0 +1,12 @@
+
+bin/
+build/
+
+*.tmp
+*.bak
+
+.loadpath
+.classpath
+.gradle
+.idea
+
