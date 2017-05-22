@@ -22,7 +22,6 @@ public class AppEndpoint {
 	public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
 		GetCountryResponse response = new GetCountryResponse();
 		response.setCountry(countryRepository.findCountry(request.getName()));
-
 		return response;
 	}
 }
