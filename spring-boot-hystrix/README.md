@@ -10,3 +10,6 @@
   * O retorno de sucesso exibe na tela: "Bombou!"
   * Em caso de erro ao chamar nossa API fake (derrubar a API do FakeRestController) aciona o fallback (hystrix) e exibe na tela: "Fora do ar!"
 
+### Hystrix Dashboard
+* http://localhost:8080/hystrix/ 
+* Adicione a seguinte informação: http://localhost:8080/hystrix.stream
