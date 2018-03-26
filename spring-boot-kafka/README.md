@@ -3,6 +3,7 @@
 ## DOCKER KAFKA
 
 Build from Source
+
 $> docker build -t spotify/kafka kafka
 
 Run
