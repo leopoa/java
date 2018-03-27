@@ -4,13 +4,13 @@
 
 Build from Source
 
-$> docker build -t spotify/kafka kafka
+> docker build -t spotify/kafka kafka
 
 Run
 - Set topics created: my-topic, default-topic
 - Set group-id: mymirror
 
-$> docker run -p 2181:2181 -p 9092:9092 \
+> docker run -p 2181:2181 -p 9092:9092 \
     --env ADVERTISED_HOST=localhost \
     --env ADVERTISED_PORT=9092 \
     --env CONSUMER_THREADS=1 \
