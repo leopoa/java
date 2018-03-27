@@ -35,4 +35,4 @@ Sample URLs:
 
 ## RUN APPLICATION
 
-./gradlew build && java -jar build/libs/spring-boot-kafka-0.0.1-SNAPSHOT.jar
+> ./gradlew build && java -jar build/libs/spring-boot-kafka-0.0.1-SNAPSHOT.jar
