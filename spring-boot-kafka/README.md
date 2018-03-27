@@ -32,3 +32,7 @@ Controller
 Sample URLs:
 - http://localhost:8080/producer?message=12345
 - http://localhost:8080/producer/my-topic?message=12345
+
+## RUN APPLICATION
+
+./gradlew build && java -jar build/libs/spring-boot-kafka-0.0.1-SNAPSHOT.jar
