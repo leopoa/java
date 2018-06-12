@@ -4,13 +4,13 @@
 
 Build from Source
 
-$> docker build -t spotify/kafka kafka
+> docker build -t spotify/kafka kafka
 
 Run
 - Set topics created: my-topic, default-topic
 - Set group-id: mymirror
 
-$> docker run -p 2181:2181 -p 9092:9092 \
+> docker run -p 2181:2181 -p 9092:9092 \
     --env ADVERTISED_HOST=localhost \
     --env ADVERTISED_PORT=9092 \
     --env CONSUMER_THREADS=1 \
@@ -32,3 +32,12 @@ Controller
 Sample URLs:
 - http://localhost:8080/producer?message=12345
 - http://localhost:8080/producer/my-topic?message=12345
+
+## RUN APPLICATION
+
+> ./gradlew build && java -jar build/libs/spring-boot-kafka-0.0.1-SNAPSHOT.jar
+
+
+## APP BOOTSTRAP
+
+> gradle init --type java-library
