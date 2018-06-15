@@ -26,7 +26,7 @@ public class UsuarioServiceOptionalTest {
     public void throwsExceptionThanUserWithoutEndereco() {
         try {
             service.findCepByUser(new Usuario("JOAO", null));
-            Assert.fail("Esperado erro ao ter usuario sem endereco cadastrado");
+            Assert.fail("Esperado exception ao ter usuario sem endereco cadastrado");
         } catch (Exception e) {
             Assert.assertTrue(e instanceof IllegalArgumentException);
         }

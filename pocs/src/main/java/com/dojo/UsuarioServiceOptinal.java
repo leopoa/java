@@ -18,7 +18,6 @@ public class UsuarioServiceOptinal {
                 .map(Endereco::getCep)
                 .orElseThrow(() -> new IllegalArgumentException());
     }
-
 }
 
 
