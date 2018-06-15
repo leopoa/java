@@ -6,25 +6,37 @@ import org.junit.Test;
 
 public class UsuarioServiceOptionalTest {
 
-    UsuarioServiceOptinal usuario;
+    UsuarioServiceOptinal service;
 
     @Before
     public void setUp(){
-        usuario = new UsuarioServiceOptinal();
+        service = new UsuarioServiceOptinal();
     }
 
     @Test
-    public void findCidadeByUserValid(){
+    public void findCepByUserValid(){
         Cidade cidade = new Cidade("POA");
         Endereco end = new Endereco("99999-999", cidade);
         Usuario user = new Usuario("JOAO", end);
 
-        Assert.assertEquals("POA",  usuario.findCidadeByUser(user));
+        Assert.assertEquals("POA",  service.findCidadeByUser(user));
     }
 
     @Test
-    public void findCidadeByUserUnknow(){
-        Usuario user = new Usuario("JOAO", null);
-        Assert.assertEquals("desconhecida",  usuario.findCidadeByUser(user));
+    public void throwsExceptionThanUserWithoutEndereco() {
+        try {
+            service.findCepByUser(new Usuario("JOAO", null));
+            Assert.fail("Esperado erro ao ter usuario sem endereco cadastrado");
+        } catch (Exception e) {
+            Assert.assertTrue(e instanceof IllegalArgumentException);
+        }
+    }
+
+    @Test
+    public void findCidadeByUserValid(){
+        Endereco end = new Endereco("99999-999", null);
+        Usuario user = new Usuario("JOAO", end);
+
+        Assert.assertEquals("99999-999",  service.findCepByUser(user));
     }
 }

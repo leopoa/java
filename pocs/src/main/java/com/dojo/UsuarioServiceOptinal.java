@@ -5,12 +5,18 @@ import java.util.Optional;
 public class UsuarioServiceOptinal {
 
     public String findCidadeByUser(Usuario user){
-
         return Optional.ofNullable(user)
                 .flatMap(Usuario::getEndereco)
                 .flatMap(Endereco::getCidade)
                 .map(Cidade::getNome)
                 .orElse("desconhecida");
+    }
+
+    public String findCepByUser(Usuario user){
+        return Optional.ofNullable(user)
+                .flatMap(Usuario::getEndereco)
+                .map(Endereco::getCep)
+                .orElseThrow(() -> new IllegalArgumentException());
     }
 
 }
@@ -43,6 +49,10 @@ class Endereco{
 
     public Optional<Cidade> getCidade(){
         return cidade;
+    }
+
+    public String getCep(){
+        return cep;
     }
 }
 
