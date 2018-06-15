@@ -2,7 +2,7 @@ package com.dojo;
 
 import java.util.Optional;
 
-public class UsuarioOptinal {
+public class UsuarioServiceOptinal {
 
     public String findCidadeByUser(Usuario user){
 
@@ -21,9 +21,9 @@ class Usuario{
     String nome;
     Optional<Endereco> endereco;
 
-    public Usuario(String nome, Optional<Endereco> endereco){
+    public Usuario(String nome, Endereco endereco){
         this.nome = nome;
-        this.endereco = endereco;
+        this.endereco = Optional.ofNullable(endereco);
     }
 
     public Optional<Endereco> getEndereco(){
@@ -36,9 +36,9 @@ class Endereco{
     String cep;
     Optional<Cidade> cidade;
 
-    public Endereco(String cep, Optional<Cidade> cidade){
+    public Endereco(String cep, Cidade cidade){
         this.cep = cep;
-        this.cidade = cidade;
+        this.cidade = Optional.ofNullable(cidade);
     }
 
     public Optional<Cidade> getCidade(){

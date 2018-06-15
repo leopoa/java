@@ -4,30 +4,27 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.util.Optional;
+public class UsuarioServiceOptionalTest {
 
-public class UsuarioOptionalTest {
-
-    UsuarioOptinal usuario;
+    UsuarioServiceOptinal usuario;
 
     @Before
     public void setUp(){
-        usuario = new UsuarioOptinal();
+        usuario = new UsuarioServiceOptinal();
     }
 
     @Test
     public void findCidadeByUserValid(){
         Cidade cidade = new Cidade("POA");
-        Endereco end = new Endereco("99999-999", Optional.ofNullable(cidade));
-        Usuario user = new Usuario("JOAO", Optional.ofNullable(end));
+        Endereco end = new Endereco("99999-999", cidade);
+        Usuario user = new Usuario("JOAO", end);
 
         Assert.assertEquals("POA",  usuario.findCidadeByUser(user));
     }
 
     @Test
     public void findCidadeByUserUnknow(){
-        Usuario user = new Usuario("JOAO", Optional.empty());
+        Usuario user = new Usuario("JOAO", null);
         Assert.assertEquals("desconhecida",  usuario.findCidadeByUser(user));
     }
 }
