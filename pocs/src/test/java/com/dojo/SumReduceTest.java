@@ -7,13 +7,13 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-public class ReduceTest {
+public class SumReduceTest {
 
-    Reduce reduce;
+    SumReduce reduce;
 
     @Before
     public void setUp(){
-        reduce = new Reduce();
+        reduce = new SumReduce();
     }
 
     @Test
