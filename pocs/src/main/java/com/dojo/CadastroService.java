@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class UsuarioServiceOptinal {
+public class CadastroService {
 
     public String findCidadeByUser(Usuario user){
         return Optional.ofNullable(user)
@@ -79,7 +79,6 @@ class Usuario{
 }
 
 class Endereco{
-
     String cep;
     Optional<Cidade> cidade;
 
