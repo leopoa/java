@@ -9,11 +9,11 @@ import java.util.List;
 
 public class CadastroServiceTest {
 
-    CadastroServiceOptinal service;
+    CadastroService service;
 
     @Before
     public void setUp(){
-        service = new CadastroServiceOptinal();
+        service = new CadastroService();
     }
 
     @Test
