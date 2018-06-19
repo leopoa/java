@@ -12,7 +12,6 @@ import static java.util.stream.Collectors.*;
 public class MarketService {
 
     public Map<String, Double> getAverageByType(List<Product> products){
-
         return products.stream()
                 .collect(groupingBy(Product::getType, averagingDouble(Product::getPrice)));
     }
