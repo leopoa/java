@@ -27,4 +27,16 @@ public class CredentialServiceTest {
 
         Assert.assertEquals(4,  service.getOnlyPropertiesWithKeyPermission(Arrays.asList(oddCredential, evenCredential)).size());
     }
+
+
+    @Test
+    public void intersectTwoListProperty(){
+        Credential oddCredential = new Credential(Arrays.asList(new Property("um", true),
+                new Property("tres", false),
+                new Property("cinco", true)));
+
+        Assert.assertEquals(1,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("um", true))).size());
+        Assert.assertEquals(0,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("um", false))).size());
+        Assert.assertEquals(0,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("dez", true))).size());
+    }
 }

@@ -14,6 +14,15 @@ public class CredentialService {
                 .filter(Property::isKey)
                 .collect(Collectors.toList());
     }
+
+    public List<Property> getRepeatedPropertiesIntersect(List<Credential> credentials, List<Property> property) {
+        return credentials
+                .stream()
+                .map(Credential::getProperties)
+                .flatMap(Collection::stream)
+                .filter(property::contains)
+                .collect(Collectors.toList());
+    }
 }
 
 class Credential{
@@ -39,6 +48,10 @@ class Property {
         this.key = isKey;
     }
 
+    @Override
+    public boolean equals(Object prop) {
+        return name.equalsIgnoreCase(((Property)prop).getName()) && key == ((Property) prop).isKey();
+    }
 
     public String getName() {
         return name;
