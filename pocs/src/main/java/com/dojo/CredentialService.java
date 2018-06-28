@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 public class CredentialService {
 
     public List<Property> getOnlyPropertiesWithKeyPermission(List<Credential> credentials) {
-
         return credentials
                 .stream()
                 .map(Credential::getProperties)
@@ -22,6 +21,13 @@ public class CredentialService {
                 .flatMap(Collection::stream)
                 .filter(property::contains)
                 .collect(Collectors.toList());
+    }
+
+    public boolean anyEmptyPropertyByPerson(Map<String, List<Property>> propertiesByPerson){
+        return propertiesByPerson
+                .values()
+                .stream()
+                .anyMatch(List::isEmpty);
     }
 }
 

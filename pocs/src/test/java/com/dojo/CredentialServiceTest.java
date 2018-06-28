@@ -1,10 +1,11 @@
 package com.dojo;
 
+import com.google.common.collect.Maps;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class CredentialServiceTest {
 
@@ -38,5 +39,13 @@ public class CredentialServiceTest {
         Assert.assertEquals(1,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("um", true))).size());
         Assert.assertEquals(0,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("um", false))).size());
         Assert.assertEquals(0,  service.getRepeatedPropertiesIntersect(Arrays.asList(oddCredential), Arrays.asList(new Property("dez", true))).size());
+    }
+
+    @Test
+    public void anyEmptyPropertyByPerson(){
+        Map<String, List<Property>> map = new HashMap<>();
+        map.put("jose", new ArrayList<>());
+
+        Assert.assertTrue(service.anyEmptyPropertyByPerson(map));
     }
 }
